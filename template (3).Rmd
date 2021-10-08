@@ -26,6 +26,27 @@ litters_df = janitor::clean_names(litters_df)
 
 ## Take a look at the data
 
+Printing in the console.
+```{r}
+litters_df
+```
+
+It's telling us we have 49 rows and 8 columns, it's a tibble, variable names have been converted to snakecase compared to before. 
+
+
+Beginning or end of dataset:
+```{r}
+head(litters_df)
+tail(litters_df)
+```
+
+Summary tool:
+```{r}
+skimr::skim(litters_df)
+```
+
+
+Can type `view` in the CONSOLE. It opens up another window to see full dataset.
 
 
 
