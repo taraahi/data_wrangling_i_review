@@ -88,6 +88,24 @@ pulse_df
 ## Comparison with Base R
 
 don't ever use `read.csv`
+```{r}
+pups_base = read.csv("./data/FAS_pups.csv")
+pups_readr = read_csv("./data/FAS_pups.csv")
+
+pups_base
+pups_readr
+```
+
+
+# Exporting data
+
+Export the mlb sub-table.
+
+```{r}
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
+
+
 
 
 
