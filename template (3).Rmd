@@ -7,6 +7,8 @@ output: github_document
 library(tidyverse)
 ```
 We're focusing on the `readr` package. 
+We put the `readxl` package in later.
+Also haven.
 
 ```{r}
 getwd()
@@ -49,7 +51,39 @@ skimr::skim(litters_df)
 Can type `view` in the CONSOLE. It opens up another window to see full dataset.
 
 
+Type `?read_csv` in console to learn more
 
+
+## Options to read_csv
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+```
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", na = c("", "NA", 9999, "."))
+```
+
+## Other file formats
+
+Read in Excel file.
+
+```{r}
+library(readxl)
+mlb_df = read_excel("./data/mlb11.xlsx")
+mlb_df
+```
+
+Can `view(mlb_df)` in console.
+
+
+Read in a SAS file.
+
+```{r}
+library(haven)
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+pulse_df
+```
 
 
 
