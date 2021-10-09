@@ -14,3 +14,59 @@ litters_df = read_csv("./data/FAS_litters.csv")
 litters_df = janitor::clean_names(litters_df)
 ```
 
+## `select`
+
+Choose some columns and not others.
+
+```{r}
+select(litters_df, group, litter_number)
+select(litters_df, group, gd0_weight:gd_of_birth)
+```
+
+Get rid of one column
+
+```{r}
+select(litters_df, -litter_number)
+```
+
+
+Renaming a column ...
+
+```{r}
+select(litters_df, GROUP = group, LITTer_NUmBer = litter_number)
+```
+
+You can rename without selecting columns
+
+```{r}
+rename(litters_df, GROUP = group, LITTer_NUmBer = litter_number)
+```
+
+
+look up `?select_helpers`, look at _starts_with_, _ends_with_, _contains_, _everything_
+
+```{r}
+select(litters_df, starts_with("gd"))
+```
+
+You can just look at the one column of interest and keep everything else to the right.
+```{r}
+select(litters_df, litter_number, everything())
+```
+
+
+New function in dplyer `relocate` does the same thing (but we usually use select).
+
+```{r}
+relocate(litters_df, litter_number)
+```
+
+
+
+
+
+
+
+
+
+
