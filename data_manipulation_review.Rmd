@@ -62,6 +62,45 @@ relocate(litters_df, litter_number)
 ```
 
 
+## `filter`
+
+Remove or keep rows (select reorganizes **columns**)
+
+Filter things out, leaves just 8 obs:
+```{r}
+filter(litters_df, gd0_weight < 22)
+```
+
+```{r}
+filter(litters_df, gd_of_birth == 20)
+```
+
+double equal because asking question of equality, not saying it equals 20.
+
+```{r}
+filter(litters_df, !(gd_of_birth == 20))
+```
+! - see where this is true and where it's not true, flip both of those.
+!= means not equal to
+
+
+```{r}
+filter(litters_df, gd0_weight >= 22, gd_of_birth == 20)
+```
+
+```{r}
+filter(litters_df, group == "Mod8")
+```
+
+Seeing two things simultaneously:
+```{r}
+filter(litters_df, group %in% c("Con7", "Mod8"))
+```
+
+
+
+
+
 
 
 
